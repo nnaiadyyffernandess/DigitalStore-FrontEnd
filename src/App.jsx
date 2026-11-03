@@ -1,5 +1,10 @@
+
+import Header from './components/Header/Header'
+
+
+
 function App() {
-  return <h1>Digital Store</h1>
+  return <Header />
 }
 
 export default App
