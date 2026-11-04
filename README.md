@@ -1,16 +1,73 @@
-# React + Vite
+# Digital Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto final de Front-end do curso de Desenvolvimento FullStack da Geração Tech , baseado no design **Drip Store** do Figma. É uma loja virtual feita com React, com página inicial, listagem de produtos e página de detalhes do produto.
 
-Currently, two official plugins are available:
+## Páginas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| Rota | Página |
+| --- | --- |
+| `/` | Home |
+| `/products` | Listagem de produtos |
+| `/product/:id` | Visualização do produto |
 
-## React Compiler
+## Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Header** com busca que redireciona para `/products?filter=termo` e navegação com destaque na página atual
+- **Footer** com informações, categorias, contato e redes sociais
+- **Galeria de imagens** reutilizável, com setas (desabilitadas na primeira e na última imagem) e miniaturas opcionais
+- **Home** com carrossel, coleções em destaque e produtos em alta
+- **Listagem** com filtros (Marca, Categoria, Gênero e Estado) e botão de ordenação, ambos apenas visuais
+- **Página de produto** com galeria, seleção de tamanho e cor, botão de compra e produtos relacionados
 
-## Expanding the ESLint configuration
+## Tecnologias
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React](https://react.dev/)
+- [Vite](https://vite.dev/)
+- [React Router](https://reactrouter.com/)
+- CSS puro
+- ESLint
+
+## Como rodar o projeto
+
+Pré-requisito: ter o [Node.js](https://nodejs.org/) instalado.
+
+```bash
+# clonar o repositório
+git clone https://github.com/nnaiadyyffernandess/DigitalStore-FrontEnd
+
+# entrar na pasta
+cd digital-store
+
+# instalar as dependências
+npm install
+
+# iniciar o servidor de desenvolvimento
+npm run dev
+```
+
+Depois, abra `http://localhost:5173` no navegador.
+
+## Estrutura de pastas
+
+```
+src/
+├── assets/        # logos e ícones (SVG)
+├── components/    # BuyBox, CollectionCard, FilterGroup, Footer, FooterInfo,
+│                  # Gallery, Header, Logo, ProductCard, ProductListing,
+│                  # ProductOptions, Section
+├── data/          # lista de produtos (products.js)
+├── pages/         # Home, Layout, ProductListingPage, ProductPage
+├── App.jsx        # rotas da aplicação
+├── index.css      # estilos globais e variáveis de cor
+└── main.jsx       # ponto de entrada
+```
+
+## Links
+
+- Deploy: _em breve_
+- Design no Figma: [Drip Store - Digital College](https://www.figma.com/design/nUk0ihM3x4u8JQtxUoAEJf/DRIP-STORE---DIGITAL-COLLEGE--Copy-?node-id=22-30&p=f)
+- Repositório base: [digitalcollegebr/projeto-digital-store](https://github.com/digitalcollegebr/projeto-digital-store)
+
+## Desenvolvido por
+
+Náiady Teixeira Fernandes
