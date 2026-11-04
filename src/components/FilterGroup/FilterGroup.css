@@ -1,0 +1,26 @@
+.filter-group {
+  margin-bottom: 24px;
+}
+
+.filter-group h4 {
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dark-gray-2);
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--dark-gray-2);
+  cursor: pointer;
+}
+
+.filter-option input {
+  accent-color: var(--primary);
+  width: 18px;
+  height: 18px;
+}

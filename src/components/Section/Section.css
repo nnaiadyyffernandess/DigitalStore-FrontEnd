@@ -1,5 +1,7 @@
 .section {
   padding: 40px 60px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .section-header {
