@@ -20,3 +20,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background: #F9F8FE;
+  font-family: 'Inter', sans-serif;
+}
+button, input {
+  font-family: inherit;
+}

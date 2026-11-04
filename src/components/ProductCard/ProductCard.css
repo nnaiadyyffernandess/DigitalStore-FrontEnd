@@ -1,0 +1,58 @@
+.product-card {
+  display: block;
+  text-decoration: none;
+  color: var(--dark-gray-2);
+}
+
+.product-card-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 321px;
+  background: var(--white);
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.product-card-image img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.discount-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 12px;
+  background: #E7FF86;
+  color: var(--dark-gray-2);
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 100px;
+}
+
+.product-card-category {
+  font-size: 14px;
+  color: var(--light-gray);
+}
+
+.product-card h3 {
+  margin: 4px 0 8px;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.old-price {
+  margin-right: 8px;
+  font-size: 18px;
+  color: var(--light-gray);
+  text-decoration: line-through;
+}
+
+.current-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark-gray);
+}
