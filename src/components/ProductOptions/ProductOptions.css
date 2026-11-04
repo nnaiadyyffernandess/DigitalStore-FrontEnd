@@ -1,0 +1,35 @@
+.product-options {
+  display: flex;
+  gap: 12px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  background: var(--white);
+  border: 1px solid var(--light-gray-2);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark-gray-2);
+  cursor: pointer;
+}
+
+.option.color {
+  width: 31px;
+  height: 31px;
+  border: none;
+}
+
+.option.text.selected {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+.option.color.selected {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
