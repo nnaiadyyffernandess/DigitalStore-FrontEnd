@@ -1,14 +1,24 @@
 .section {
-  padding: 40px 60px;
   max-width: 1440px;
   margin: 0 auto;
+  padding: 40px 60px;
 }
 
 .section-header {
+  position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 24px;
+}
+
+.section-header.center {
+  justify-content: center;
+}
+
+.section-header.center .section-link {
+  position: absolute;
+  right: 0;
 }
 
 .section-header h2 {
@@ -18,7 +28,7 @@
 }
 
 .section-link {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--primary);
   text-decoration: none;
 }

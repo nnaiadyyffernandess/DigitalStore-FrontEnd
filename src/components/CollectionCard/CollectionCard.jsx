@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom'
 import './CollectionCard.css'
 
-function CollectionCard({ image, title, link = '/products' }) {
+function CollectionCard({ image, title, discount, link = '/products' }) {
   return (
-    <Link to={link} className="collection-card">
+    <div className="collection-card">
       <img src={image} alt={title} />
-    </Link>
+      {discount && <span className="collection-tag">{discount}% OFF</span>}
+      <Link to={link} className="collection-button">Comprar</Link>
+    </div>
   )
 }
 

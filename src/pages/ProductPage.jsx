@@ -7,7 +7,7 @@ import ProductListing from '../components/ProductListing/ProductListing'
 import { products } from '../data/products'
 import './ProductPage.css'
 
-const images = Array.from({ length: 5 }, (_, i) => `/produc-image-${i + 1}.jpeg`)
+const images = Array.from({ length: 5 }, (_, i) => ({ src: `/produc-image-${i + 1}.jpeg` }))
 const sizes = ['39', '40', '41', '42', '43']
 const colors = ['#6FEEFF', '#FF6969', '#5E5E5E', '#6D70B7']
 
@@ -32,7 +32,7 @@ function ProductPage() {
         </nav>
 
         <div className="product-main">
-          <Gallery images={images} width="700px" height="570px" showThumbs />
+         <Gallery images={images} width="700px" height="570px" radius="4px" showThumbs />
 
           <BuyBox
             name={product.name}
@@ -56,7 +56,7 @@ function ProductPage() {
         </div>
       </div>
 
-      <Section title="Produtos Relacionados" link={{ text: 'Ver todos', href: '/products' }}>
+      <Section title="Produtos recomendados" titleAlign="left" link={{ text: 'Ver todos', href: '/products' }}>
         <ProductListing products={products.slice(0, 4)} />
       </Section>
     </main>
