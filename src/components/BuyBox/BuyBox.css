@@ -14,11 +14,14 @@
 .buy-box-rating {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
   margin-bottom: 20px;
 }
 
 .rating-badge {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
   margin-left: 8px;
   padding: 4px 8px;
   background: var(--warning);
@@ -29,7 +32,7 @@
 }
 
 .rating-count {
-  margin-left: 8px;
+  
   font-size: 14px;
   color: var(--light-gray);
 }
@@ -40,8 +43,8 @@
 
 .buy-box-price .old-price {
   margin-right: 12px;
-  font-size: 18px;
-  color: var(--light-gray);
+  font-size: 16px;
+  color: var(--light-gray-2);
   text-decoration: line-through;
 }
 
@@ -86,4 +89,17 @@
   font-weight: 700;
   color: var(--white);
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .buy-box h1 {
+    font-size: 24px;
+  }
+
+  .buy-box-price .current-price {
+    font-size: 26px;
+  }
+
+  .buy-button {
+    width: 100%;
+  }
 }

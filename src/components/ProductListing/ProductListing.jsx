@@ -3,10 +3,7 @@ import './ProductListing.css'
 
 function ProductListing({ products, columns = 4 }) {
   return (
-    <div
-      className="product-listing"
-      style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
-    >
+    <div className="product-listing" style={{ '--columns': columns }}>
       {products.map((product) => (
         <ProductCard key={product.id} {...product} />
       ))}

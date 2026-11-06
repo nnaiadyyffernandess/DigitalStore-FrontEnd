@@ -24,3 +24,13 @@
 .product-main .buy-box {
   flex: 1;
 }
+@media (max-width: 1024px) {
+  .product-page {
+    padding: 24px 20px 0;
+  }
+
+  .product-main {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

@@ -6,6 +6,7 @@
 .gallery-main {
   position: relative;
   overflow: hidden;
+  height: var(--gallery-height);
   background: var(--light-gray-3);
 }
 
@@ -78,4 +79,105 @@
 
 .thumb.active {
   border-color: var(--primary);
+}
+.gallery-slide.with-caption {
+  position: relative;
+  justify-content: flex-end;
+  padding-right: 8%;
+}
+
+.gallery-slide.with-caption img {
+  max-width: 50%;
+}
+
+.gallery-caption {
+  position: absolute;
+  top: 50%;
+  left: 11%;
+  transform: translateY(-50%);
+  max-width: 38%;
+  text-align: left;
+}
+
+.caption-tag {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--warning);
+}
+
+.gallery-caption h2 {
+  margin-bottom: 16px;
+  font-size: 64px;
+  line-height: 1.1;
+  font-weight: 700;
+  color: var(--dark-gray);
+}
+
+.gallery-caption p {
+  margin-bottom: 32px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--dark-gray-3);
+}
+
+.caption-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 48px;
+  background: var(--primary);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+}
+@media (max-width: 768px) {
+  .gallery-main {
+    height: 360px;
+  }
+
+  .gallery-slide.with-caption {
+    padding-right: 4%;
+  }
+
+  .gallery-slide.with-caption img {
+    max-width: 45%;
+  }
+
+  .gallery-caption {
+    left: 6%;
+    max-width: 48%;
+  }
+
+  .gallery-caption h2 {
+    margin-bottom: 12px;
+    font-size: 24px;
+  }
+
+  .gallery-caption p {
+    display: none;
+  }
+
+  .caption-tag {
+    font-size: 12px;
+  }
+
+  .caption-button {
+    width: 120px;
+    height: 36px;
+  }
+
+  .gallery-thumbs {
+    overflow-x: auto;
+  }
+
+  .thumb {
+    flex-shrink: 0;
+    width: 70px;
+    height: 57px;
+  }
 }

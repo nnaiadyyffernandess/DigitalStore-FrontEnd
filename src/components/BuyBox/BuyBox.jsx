@@ -11,16 +11,11 @@ function BuyBox({ name, reference, stars, rating, price, priceDiscount, descript
       <h1>{name}</h1>
       <p className="buy-box-ref">{reference}</p>
 
-      <div className="buy-box-rating">
-        {Array.from({ length: 5 }, (_, i) => (
-          <img
-            key={i}
-            src={starIcon}
-            alt=""
-            style={{ opacity: i < Math.round(stars) ? 1 : 0.3 }}
-          />
-        ))}
-        <span className="rating-badge">{stars}</span>
+            <div className="buy-box-rating">
+        <span className="rating-badge">
+          {stars}
+          <img src={starIcon} alt="" />
+        </span>
         <span className="rating-count">({rating} avaliações)</span>
       </div>
 

@@ -7,6 +7,7 @@ import './Header.css'
 
 function Header() {
   const [busca, setBusca] = useState('')
+  const [menuOpen, setMenuOpen] = useState(false)
   const navigate = useNavigate()
 
   function handleSubmit(event) {
@@ -14,10 +15,27 @@ function Header() {
     navigate(`/products?filter=${encodeURIComponent(busca)}`)
   }
 
+  function closeMenu() {
+    setMenuOpen(false)
+  }
+
   return (
     <header className="header">
       <div className="header-top">
-        <Link to="/">
+        <button
+          type="button"
+          className="menu-toggle"
+          onClick={() => setMenuOpen(true)}
+          aria-label="Abrir menu"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+
+        <Link to="/" className="header-logo">
           <Logo src={logoHeader} />
         </Link>
 
@@ -49,6 +67,24 @@ function Header() {
         <NavLink to="/categories">Categorias</NavLink>
         <NavLink to="/orders">Meus Pedidos</NavLink>
       </nav>
+
+      {menuOpen && <div className="menu-overlay" onClick={closeMenu} />}
+
+      <aside className={menuOpen ? 'mobile-menu open' : 'mobile-menu'} aria-label="Menu">
+        <h3>Páginas</h3>
+        <nav>
+          <NavLink to="/" end onClick={closeMenu}>Home</NavLink>
+          <NavLink to="/products" onClick={closeMenu}>Produtos</NavLink>
+          <NavLink to="/categories" onClick={closeMenu}>Categorias</NavLink>
+          <NavLink to="/orders" onClick={closeMenu}>Meus Pedidos</NavLink>
+        </nav>
+
+        <div className="mobile-menu-bottom">
+          <hr />
+          <Link to="/login" className="login-button" onClick={closeMenu}>Entrar</Link>
+          <Link to="/signup" className="signup-link" onClick={closeMenu}>Cadastre-se</Link>
+        </div>
+      </aside>
     </header>
   )
 }

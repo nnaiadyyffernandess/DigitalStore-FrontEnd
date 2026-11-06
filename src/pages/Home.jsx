@@ -5,10 +5,21 @@ import ProductListing from '../components/ProductListing/ProductListing'
 import { products } from '../data/products'
 import './Home.css'
 
-const slides = Array.from({ length: 8 }, (_, i) => ({
-  src: `/home-slide-${i + 1}.jpeg`,
-}))
-
+const slides = [
+  {
+    src: '/tenisbrancoevermelho.png',
+    alt: 'Tênis Nike Air Force vermelho',
+    rotate: -19.34,
+    tag: 'Melhores ofertas personalizadas',
+    title: 'Queima de stoque Nike 🔥',
+    text: 'Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.',
+    buttonText: 'Ver Ofertas',
+    buttonLink: '/products',
+  },
+  ...Array.from({ length: 8 }, (_, i) => ({
+    src: `/home-slide-${i + 1}.jpeg`,
+  })),
+]
 const collections = [
   { id: 1, image: '/collection-1.png', title: 'Novo drop Supreme', discount: 30 },
   { id: 2, image: '/collection-2.png', title: 'Coleção Adidas', discount: 30 },

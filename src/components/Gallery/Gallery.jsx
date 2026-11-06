@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import arrowLeft from '../../assets/arrow-left.svg'
 import arrowRight from '../../assets/arrow-right.svg'
 import './Gallery.css'
@@ -40,8 +41,27 @@ function Gallery({
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
           {images.map((image, index) => (
-            <div className="gallery-slide" key={image.src}>
-              <img src={image.src} alt={`Imagem ${index + 1}`} />
+            <div
+              className={image.title ? 'gallery-slide with-caption' : 'gallery-slide'}
+              key={image.src}
+            >
+              {image.title && (
+                <div className="gallery-caption">
+                  {image.tag && <span className="caption-tag">{image.tag}</span>}
+                  <h2>{image.title}</h2>
+                  {image.text && <p>{image.text}</p>}
+                  {image.buttonText && (
+                    <Link to={image.buttonLink || '/products'} className="caption-button">
+                      {image.buttonText}
+                    </Link>
+                  )}
+                </div>
+              )}
+                           <img
+                src={image.src}
+                alt={image.alt || `Imagem ${index + 1}`}
+                style={image.rotate ? { transform: `rotate(${image.rotate}deg)` } : undefined}
+              />
             </div>
           ))}
         </div>

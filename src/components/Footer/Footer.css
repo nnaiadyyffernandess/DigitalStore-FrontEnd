@@ -61,3 +61,13 @@
   text-align: center;
   font-size: 14px;
 }
+@media (max-width: 900px) {
+  .footer {
+    padding: 40px 20px 24px;
+  }
+
+  .footer-columns {
+    flex-wrap: wrap;
+    gap: 32px 48px;
+  }
+}

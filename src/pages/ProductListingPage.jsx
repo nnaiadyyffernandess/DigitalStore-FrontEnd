@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import FilterGroup from '../components/FilterGroup/FilterGroup'
+import Section from '../components/Section/Section'
 import ProductListing from '../components/ProductListing/ProductListing'
 import { products } from '../data/products'
 import './ProductListingPage.css'
@@ -33,33 +35,71 @@ const estados = [
 function ProductListingPage() {
   const [searchParams] = useSearchParams()
   const busca = searchParams.get('filter')
+  const [ordem, setOrdem] = useState('menor')
+  const [filtersOpen, setFiltersOpen] = useState(false)
+
+  const ordenados = [...products].sort((a, b) => {
+    const precoA = a.priceDiscount ?? a.price
+    const precoB = b.priceDiscount ?? b.price
+    return ordem === 'menor' ? precoA - precoB : precoB - precoA
+  })
+
+  const titulo = busca
+    ? `Resultados para “${busca}” - ${ordenados.length} produtos`
+    : `${ordenados.length} produtos encontrados`
 
   return (
     <main className="listing-page">
-      <div className="listing-top">
-        <p className="listing-title">
-          {busca ? <>Resultados para “<strong>{busca}</strong>”</> : 'Todos os produtos'}
-          {' '}- {products.length} produtos
-        </p>
+      <aside className="listing-side">
+        <div className="listing-controls">
+          <label className="listing-sort">
+            <span>Ordenar por</span>
+            <select value={ordem} onChange={(event) => setOrdem(event.target.value)}>
+              <option value="menor">Menor preço</option>
+              <option value="maior">Maior preço</option>
+            </select>
+          </label>
 
-        <select className="listing-sort" defaultValue="relevantes">
-          <option value="relevantes">Ordenar por: mais relevantes</option>
-          <option value="menor">Ordenar por: menor preço</option>
-          <option value="maior">Ordenar por: maior preço</option>
-        </select>
-      </div>
+          <button
+            type="button"
+            className="filter-toggle"
+            onClick={() => setFiltersOpen(true)}
+            aria-label="Abrir filtros"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+            </svg>
+          </button>
+        </div>
 
-      <div className="listing-content">
-        <aside className="listing-filters">
-          <h3>Filtrar por</h3>
+        {filtersOpen && (
+          <div className="filters-overlay" onClick={() => setFiltersOpen(false)} />
+        )}
+
+        <div className={filtersOpen ? 'listing-filters open' : 'listing-filters'}>
+          <div className="filters-head">
+            <h3>Filtrar por</h3>
+            <button
+              type="button"
+              className="filters-close"
+              onClick={() => setFiltersOpen(false)}
+              aria-label="Fechar filtros"
+            >
+              ✕
+            </button>
+          </div>
           <hr />
           <FilterGroup title="Marca" name="marca" options={marcas} />
           <FilterGroup title="Categoria" name="categoria" options={categorias} />
           <FilterGroup title="Gênero" name="genero" options={generos} />
           <FilterGroup title="Estado" name="estado" inputType="radio" options={estados} />
-        </aside>
+        </div>
+      </aside>
 
-        <ProductListing products={products} columns={3} />
+      <div className="listing-main">
+        <Section title={titulo} titleAlign="left">
+          <ProductListing products={ordenados} columns={3} />
+        </Section>
       </div>
     </main>
   )

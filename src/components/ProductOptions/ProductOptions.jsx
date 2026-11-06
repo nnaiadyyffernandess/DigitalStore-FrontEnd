@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './ProductOptions.css'
 
-function ProductOptions({ options, shape = 'square', type = 'text', radius = '4px' }) {
+function ProductOptions({ options, shape = 'square', radius = '4px', type = 'text' }) {
   const [selected, setSelected] = useState(null)
 
   return (
@@ -9,14 +9,14 @@ function ProductOptions({ options, shape = 'square', type = 'text', radius = '4p
       {options.map((option) => {
         const style = {
           borderRadius: shape === 'circle' ? '50%' : radius,
-          ...(type === 'color' ? { background: option } : {}),
+          ...(type === 'color' ? { backgroundColor: option } : {}),
         }
 
         return (
           <button
             key={option}
             type="button"
-            className={`option ${type} ${selected === option ? 'selected' : ''}`}
+            className={`option ${shape} ${type}${selected === option ? ' selected' : ''}`}
             style={style}
             onClick={() => setSelected(option)}
             aria-label={type === 'color' ? `Cor ${option}` : `Tamanho ${option}`}
