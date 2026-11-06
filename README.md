@@ -64,7 +64,7 @@ src/
 
 ## Links
 
-- Deploy: _em breve_
+- Deploy: https://digitalstore-tau.vercel.app
 - Design no Figma: [Drip Store - Digital College](https://www.figma.com/design/nUk0ihM3x4u8JQtxUoAEJf/DRIP-STORE---DIGITAL-COLLEGE--Copy-?node-id=22-30&p=f)
 - Repositório base: [digitalcollegebr/projeto-digital-store](https://github.com/digitalcollegebr/projeto-digital-store)
 
