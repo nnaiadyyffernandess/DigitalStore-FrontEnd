@@ -29,7 +29,7 @@ const collections = [
 function Home() {
   return (
     <main>
-      <Gallery images={slides} width="1440px" height="681px" />
+      <Gallery className="home-gallery" images={slides} width="1440px" height="681px" />
 
       <Section title="Coleções em destaque" titleAlign="center">
         <div className="collections">

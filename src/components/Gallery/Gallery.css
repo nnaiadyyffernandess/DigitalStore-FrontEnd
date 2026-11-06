@@ -181,3 +181,15 @@
     height: 57px;
   }
 }
+.home-gallery .gallery-slide:not(.with-caption) img {
+  max-width: 55%;
+  max-height: 85%;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .home-gallery .gallery-slide:not(.with-caption) img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+}
