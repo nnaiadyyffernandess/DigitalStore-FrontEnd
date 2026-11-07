@@ -1,8 +1,13 @@
+.home-banner {
+  padding-top: 24px;
+}
+
 .collections {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
+
 @media (max-width: 768px) {
   .collections {
     grid-template-columns: 1fr;

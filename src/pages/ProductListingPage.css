@@ -2,9 +2,7 @@
   display: flex;
   align-items: flex-start;
   gap: 40px;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 40px 60px;
+  padding-block: 40px;
 }
 
 .listing-side {
@@ -30,7 +28,7 @@
   padding: 0 16px;
   background: var(--white);
   border: 1px solid var(--light-gray-2);
-  border-radius: 4px;
+  border-radius: var(--radius);
   font-size: 16px;
   color: var(--dark-gray-2);
 }
@@ -38,7 +36,7 @@
 .listing-filters {
   padding: 30px;
   background: var(--white);
-  border-radius: 4px;
+  border-radius: var(--radius);
 }
 
 .filters-head {
@@ -79,7 +77,7 @@
     flex-direction: column;
     align-items: stretch;
     gap: 24px;
-    padding: 24px 20px;
+    padding-block: 24px;
   }
 
   .listing-side {
@@ -106,7 +104,7 @@
     height: 60px;
     background: var(--primary);
     border: none;
-    border-radius: 4px;
+    border-radius: var(--radius);
     color: var(--white);
     cursor: pointer;
   }

@@ -1,7 +1,7 @@
 .product-options {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
 }
 
 .option {
@@ -31,6 +31,12 @@
   border: none;
 }
 
-.option.selected {
-  border: 2px solid var(--primary);
+.option.text.selected {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+.option.color.selected {
+  box-shadow: 0 0 0 3px var(--white), 0 0 0 5px var(--primary);
 }

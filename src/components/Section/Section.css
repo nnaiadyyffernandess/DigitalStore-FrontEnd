@@ -1,7 +1,5 @@
 .section {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 40px 60px;
+  padding-block: 40px;
 }
 
 .section-header {
@@ -32,9 +30,10 @@
   color: var(--primary);
   text-decoration: none;
 }
+
 @media (max-width: 768px) {
   .section {
-    padding: 24px 20px;
+    padding-block: 24px;
   }
 
   .section-header h2 {

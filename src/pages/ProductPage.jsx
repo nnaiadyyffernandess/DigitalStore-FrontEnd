@@ -17,7 +17,7 @@ function ProductPage() {
 
   if (!product) {
     return (
-      <main className="product-page">
+      <main className="product-page container">
         <p>Produto não encontrado.</p>
         <Link to="/products">Voltar para os produtos</Link>
       </main>
@@ -26,13 +26,13 @@ function ProductPage() {
 
   return (
     <main>
-      <div className="product-page">
+      <div className="product-page container">
         <nav className="breadcrumb">
           <Link to="/">Home</Link> / <Link to="/products">Produtos</Link> / Tênis / {product.name}
         </nav>
 
         <div className="product-main">
-         <Gallery images={images} width="700px" height="570px" radius="4px" showThumbs />
+          <Gallery images={images} width="700px" height="570px" radius="4px" showThumbs />
 
           <BuyBox
             name={product.name}
@@ -56,7 +56,11 @@ function ProductPage() {
         </div>
       </div>
 
-      <Section title="Produtos recomendados" titleAlign="left" link={{ text: 'Ver todos', href: '/products' }}>
+      <Section
+        title="Produtos recomendados"
+        titleAlign="left"
+        link={{ text: 'Ver todos', href: '/products' }}
+      >
         <ProductListing products={products.slice(0, 4)} />
       </Section>
     </main>

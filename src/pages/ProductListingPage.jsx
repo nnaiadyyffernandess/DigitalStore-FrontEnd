@@ -49,7 +49,7 @@ function ProductListingPage() {
     : `${ordenados.length} produtos encontrados`
 
   return (
-    <main className="listing-page">
+    <main className="listing-page container">
       <aside className="listing-side">
         <div className="listing-controls">
           <label className="listing-sort">

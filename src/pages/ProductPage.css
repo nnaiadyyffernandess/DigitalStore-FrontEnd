@@ -1,7 +1,5 @@
 .product-page {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 40px 60px 0;
+  padding-top: 40px;
 }
 
 .breadcrumb {
@@ -24,9 +22,10 @@
 .product-main .buy-box {
   flex: 1;
 }
+
 @media (max-width: 1024px) {
   .product-page {
-    padding: 24px 20px 0;
+    padding-top: 24px;
   }
 
   .product-main {

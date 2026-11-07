@@ -1,6 +1,7 @@
 import Gallery from '../components/Gallery/Gallery'
 import Section from '../components/Section/Section'
 import CollectionCard from '../components/CollectionCard/CollectionCard'
+import CategoryList from '../components/CategoryList/CategoryList'
 import ProductListing from '../components/ProductListing/ProductListing'
 import { products } from '../data/products'
 import './Home.css'
@@ -20,6 +21,7 @@ const slides = [
     src: `/home-slide-${i + 1}.jpeg`,
   })),
 ]
+
 const collections = [
   { id: 1, image: '/collection-1.png', title: 'Novo drop Supreme', discount: 30 },
   { id: 2, image: '/collection-2.png', title: 'Coleção Adidas', discount: 30 },
@@ -29,9 +31,21 @@ const collections = [
 function Home() {
   return (
     <main>
-      <Gallery className="home-gallery" images={slides} width="1440px" height="681px" />
+      <div className="container home-banner">
+        <Gallery
+          className="home-gallery"
+          images={slides}
+          width="1440px"
+          height="681px"
+          radius="4px"
+        />
+      </div>
 
-      <Section title="Coleções em destaque" titleAlign="center">
+      <Section
+        title="Coleções em destaque"
+        titleAlign="center"
+        link={{ text: 'Ver todos', href: '/products' }}
+      >
         <div className="collections">
           {collections.map((collection) => (
             <CollectionCard key={collection.id} {...collection} />
@@ -39,7 +53,15 @@ function Home() {
         </div>
       </Section>
 
-      <Section title="Produtos em alta" titleAlign="left" link={{ text: 'Ver todos', href: '/products' }}>
+      <Section title="Coleções em destaque" titleAlign="center">
+        <CategoryList />
+      </Section>
+
+      <Section
+        title="Produtos em alta"
+        titleAlign="left"
+        link={{ text: 'Ver todos', href: '/products' }}
+      >
         <ProductListing products={products.slice(0, 8)} />
       </Section>
     </main>

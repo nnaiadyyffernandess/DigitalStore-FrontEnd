@@ -31,6 +31,7 @@ const contato = [
 function Footer() {
   return (
     <footer className="footer">
+      <div className="container">
       <div className="footer-top">
         <div className="footer-brand">
           <Logo src={logoFooter} />
@@ -60,6 +61,7 @@ function Footer() {
 
       <hr />
       <p className="footer-copy">© {new Date().getFullYear()} Digital Store</p>
+      </div>
     </footer>
   )
 }
