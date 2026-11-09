@@ -80,6 +80,8 @@
 .thumb.active {
   border-color: var(--primary);
 }
+
+/* slide com texto (primeiro slide da Home) */
 .gallery-slide.with-caption {
   position: relative;
   justify-content: flex-end;
@@ -129,46 +131,79 @@
   width: 220px;
   height: 48px;
   background: var(--primary);
-  border-radius: 4px;
+  border-radius: var(--radius);
   font-size: 14px;
   font-weight: 700;
   color: var(--white);
   text-decoration: none;
 }
+
+/* fotos dos outros slides da Home */
+.home-gallery .gallery-slide:not(.with-caption) img {
+  max-width: 55%;
+  max-height: 85%;
+  border-radius: var(--radius);
+}
+
+/* celular (sempre por último) */
 @media (max-width: 768px) {
   .gallery-main {
-    height: 360px;
+    height: 480px;
   }
 
   .gallery-slide.with-caption {
-    padding-right: 4%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px 20px;
   }
 
   .gallery-slide.with-caption img {
-    max-width: 45%;
+    order: 1;
+    max-width: 80%;
+    max-height: 38%;
   }
 
   .gallery-caption {
-    left: 6%;
-    max-width: 48%;
-  }
-
-  .gallery-caption h2 {
-    margin-bottom: 12px;
-    font-size: 24px;
-  }
-
-  .gallery-caption p {
-    display: none;
+    position: static;
+    transform: none;
+    order: 2;
+    max-width: 100%;
+    text-align: center;
   }
 
   .caption-tag {
+    margin-bottom: 8px;
     font-size: 12px;
+    color: var(--primary);
+  }
+
+  .gallery-caption h2 {
+    margin-bottom: 8px;
+    font-size: 28px;
+  }
+
+  .gallery-caption p {
+    margin-bottom: 16px;
+    font-size: 13px;
   }
 
   .caption-button {
-    width: 120px;
-    height: 36px;
+    width: 100%;
+    height: 44px;
+  }
+
+  .home-gallery .gallery-slide:not(.with-caption) img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+  }
+
+  .home-gallery .gallery-arrow {
+    top: 28%;
   }
 
   .gallery-thumbs {
@@ -179,17 +214,5 @@
     flex-shrink: 0;
     width: 70px;
     height: 57px;
-  }
-}
-.home-gallery .gallery-slide:not(.with-caption) img {
-  max-width: 55%;
-  max-height: 85%;
-  border-radius: 4px;
-}
-
-@media (max-width: 768px) {
-  .home-gallery .gallery-slide:not(.with-caption) img {
-    max-width: 90%;
-    max-height: 90%;
   }
 }
